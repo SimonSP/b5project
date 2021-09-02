@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  api:
+    build: .
+    ports:
+      - '5000:5000'
+  db:
+    image: 'postgres'
+    restart: always
+    environment:
+      POSTGRES_DB: 'testdb'
+      POSTGRES_USER: 'grupo2'
+      POSTGRES_PASSWORD: 'asd123'
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
