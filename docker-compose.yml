@@ -4,13 +4,13 @@ services:
   api:
     build: .
     ports:
-      - '5000:5000'
+      - '8080:8080'
   db:
     image: 'postgres'
     restart: always
+    ports:
+    - "5432:5432"
     environment:
-      POSTGRES_DB: 'testdb'
-      POSTGRES_USER: 'grupo2'
       POSTGRES_PASSWORD: 'asd123'
     volumes:
       - data:/var/lib/postgresql/data
