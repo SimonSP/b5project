@@ -23,9 +23,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   PollMessage.init({
     content: DataTypes.STRING,
-    content: DataTypes.JSON,
-    content: DataTypes.JSON,
-    content: DataTypes.JSON,
+    options: DataTypes.JSON,
+    openOptions: DataTypes.JSON,
+    responses: DataTypes.JSON,
   }, {
     sequelize,
     modelName: 'PollMessage',
