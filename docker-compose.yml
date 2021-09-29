@@ -6,7 +6,7 @@ services:
     ports:
       - '5000:5000'
     environment:
-      DB_PASSWORD: 'asd123'
+      POSTGRES_PASSWORD: 'asd123'
   db:
     image: 'postgres'
     restart: always
