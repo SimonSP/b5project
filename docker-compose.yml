@@ -29,3 +29,6 @@ services:
 
 volumes:
   data:
+
+networks:
+  default:
