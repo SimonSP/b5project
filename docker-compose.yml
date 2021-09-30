@@ -3,8 +3,20 @@ version: '3.9'
 services:
   api:
     build: .
+    depends_on:
+      - db
     ports:
       - '5000:5000'
+    command:
+      - nodemon
+      - app.js
+    restart: always
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      NODE_ENV: development
+      POSTGRES_PASSWORD: 'asd123'
   db:
     image: 'postgres'
     restart: always
@@ -17,3 +29,6 @@ services:
 
 volumes:
   data:
+
+networks:
+  default:

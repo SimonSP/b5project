@@ -18,19 +18,4 @@ app.use(helmet())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
 
-
-
-
-//GET EXAMPLE
-/* app.get('/users', async (req, res) => {
-    const users = await db.select().from('users')
-    res.json(users)
-}) */
-
-//POST EXAMPLE
-/* app.post('/users', async (req, res) => {
-    const user = await db('users').insert({ name: req.body.name }).returning('*')
-    res.json(user)
-}) */
-
 app.listen(PORT, () => console.log(`Server up at http://localhost:${PORT}`))
